@@ -51,7 +51,7 @@ def supported_mcus():
 	proc = subprocess.Popen('avr-gcc -Wa,-mlist-devices --target-help', stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
 	out, err = proc.communicate()
 	exitcode = proc.returncode
-	lines = string.split(out, '\n')
+	lines = string.split(err, '\n')
 
 	mcus = []
 	consider = False
